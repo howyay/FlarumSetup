@@ -3,10 +3,9 @@
 Add non-root user to ensure safety in production environment:
 
 ```
-adduser wallbuilder 
-DPWUs3AZK3ZTcLxM
-usermod -aG sudo wallbuilder
-su - wallbuilder
+adduser username 
+usermod -aG sudo username
+su - username
 ```
 
 Update+upgrade and install Apache+MariaDB:
@@ -70,7 +69,7 @@ Recreate root user for MariaDB so non-root users can access it too:
 ```
 sudo mysql -u root -p
 	DROP USER 'root'@'localhost';
-	CREATE USER 'root'@'%' IDENTIFIED BY 'Asdfghjkl3310';
+	CREATE USER 'root'@'%' IDENTIFIED BY 'password';
 	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 	FLUSH PRIVILEGES;
 	EXIT;
@@ -80,8 +79,8 @@ Then create database and corresponding user for Flarum:
 
 ```
 mysql -u root -p
-	CREATE DATABASE hgchatdb;
-	GRANT ALL PRIVILEGES ON hgchatdb.* TO 'Wallbuilder'@'localhost' IDENTIFIED BY 'Asdfghjkl3310';
+	CREATE DATABASE dbname;
+	GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 	FLUSH PRIVILEGES;
 	EXIT;
 ```
@@ -199,7 +198,7 @@ git clone https://github.com/letsencrypt/letsencrypt && cd letsencrypt
 sudo ./letsencrypt-auto --help
 ```
 
-Now ensure that port 443 is open than we can obtain our certificate by running the following
+Now ensure that port 443 is open then we can obtain our certificate by running the following
 
 ```
 sudo ./letsencrypt-auto --apache -d your.domain.com
@@ -220,7 +219,7 @@ And change the following line
 'url' => 'https://your.domain.com'
 ```
 
-Then edit .htaccess
+Edit .htaccess
 
 ```
 sudo nano .htaccess
