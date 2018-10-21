@@ -183,12 +183,6 @@ echo "/var/_swap_/swapfile none swap sw 0 0" >> /etc/fstab
 free -m
 ```
 
-## Optimize autoload for Flarum composer project
-
-```
-composer dump-autoload --optimize
-```
-
 ## Enable HTTPS for your site
 
 Clone Let's Encrypt repo and install and update the client and its dependencies
@@ -249,3 +243,18 @@ sudo ./letsencrypt-auto --apache -d your.domain.com
 sudo systemctl restart apache2
 ```
 
+# References
+
+[https://discuss.flarum.org/d/1623-obtain-an-ssl-certificate-and-run-your-forum-with-https-for-free](https://discuss.flarum.org/d/1623-obtain-an-ssl-certificate-and-run-your-forum-with-https-for-free)
+
+[https://flarum.org/docs/installation/](https://flarum.org/docs/installation/)
+
+[https://jsthon.com/flarum-installation-guide/](https://jsthon.com/flarum-installation-guide/)
+
+[https://www.howtoing.com/ubuntu-flarum](https://www.howtoing.com/ubuntu-flarum)
+
+[https://laravel-china.org/composer](https://laravel-china.org/composer)
+
+[https://askubuntu.com/questions/766334/cant-login-as-mysql-user-root-from-normal-user-account-in-ubuntu-16-04](https://askubuntu.com/questions/766334/cant-login-as-mysql-user-root-from-normal-user-account-in-ubuntu-16-04)
+
+[https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes)
