@@ -229,7 +229,10 @@ sudo nano .htaccess
 Add the following in <IfModule mod_rewrite.c> block
 
 ```
-#start https redirect                                                                       RewriteCond %{HTTPS} off                                                                      RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}                                             #end https redirect
+#start https redirect                                                                       
+RewriteCond %{HTTPS} off                                                                      
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}                                             
+#end https redirect
 ```
 
 Lastly restart Apache service
