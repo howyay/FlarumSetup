@@ -150,7 +150,7 @@ sudo systemctl restart apache2
 
 ## Update to latest Ubuntu LTS
 
-First make sure *update -manager-core* is installed
+First make sure *update-manager-core* is installed
 
 ```
 sudo apt-get install update-manager-core
